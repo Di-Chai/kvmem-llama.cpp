@@ -66,6 +66,8 @@ struct kvmem_server_options {
     int threads = -1;
     int threads_batch = -1;
     int ubatch = 0; // Omission preserves the existing batch-size default.
+    bool cpu_moe = false;
+    int n_cpu_moe = 0;
     llama_flash_attn_type flash_attn = LLAMA_FLASH_ATTN_TYPE_AUTO;
     bool flash_attn_set = false;
     llama_load_mode load_mode = LLAMA_LOAD_MODE_AUTO;
@@ -185,6 +187,10 @@ struct kvmem_server_options {
             int n = kvmem_cli_int(arg.c_str(), need(arg.c_str()), std::numeric_limits<int>::min());
             if (n <= 0) n = static_cast<int>(std::max(1u, std::thread::hardware_concurrency()));
             (arg == "-t" || arg == "--threads" ? threads : threads_batch) = n;
+        } else if (arg == "-cmoe" || arg == "--cpu-moe") {
+            cpu_moe = true;
+        } else if (arg == "-ncmoe" || arg == "--n-cpu-moe") {
+            n_cpu_moe = kvmem_cli_int(arg.c_str(), need(arg.c_str()));
         } else if (arg == "-ub" || arg == "--ubatch-size") {
             ubatch = kvmem_cli_int(arg.c_str(), need(arg.c_str()), 1);
         } else if (arg == "-fa" || arg == "--flash-attn") {

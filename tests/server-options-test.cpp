@@ -40,6 +40,12 @@ int main() {
     parse("--no-kvmem-trace", ""); check(o.trace == 0);
     parse("-t", "3"); parse("-tb", "5"); parse("-ub", "64");
     check(o.threads == 3 && o.threads_batch == 5 && o.ubatch == 64);
+    check(!o.cpu_moe && o.n_cpu_moe == 0);
+    parse("--n-cpu-moe", "16"); check(o.n_cpu_moe == 16);
+    parse("-ncmoe", "0"); check(o.n_cpu_moe == 0);
+    for (const char * bad : {"-1", "1x", "1.5", "", "2147483648"})
+        rejects([&] { parse("--n-cpu-moe", bad); });
+    parse("-cmoe", ""); check(o.cpu_moe);
     parse("--flash-attn", "off"); check(o.flash_attn == LLAMA_FLASH_ATTN_TYPE_DISABLED);
     parse("-fa", "on"); check(o.flash_attn == LLAMA_FLASH_ATTN_TYPE_ENABLED);
     parse("-fa", "auto"); check(o.flash_attn == LLAMA_FLASH_ATTN_TYPE_AUTO);
@@ -87,5 +93,14 @@ int main() {
     check(kvmem_config_key("-ngl") == "--n-gpu-layers");
     check(kvmem_config_key("--path") == "--ui-dir");
     check(kvmem_config_key("--no-mmap") == "--load-mode");
+    check(kvmem_config_key("-ncmoe") == "--n-cpu-moe");
+    environment.clear();
+    environment["LLAMA_ARG_CPU_MOE"] = "false";
+    environment["LLAMA_ARG_N_CPU_MOE"] = "20";
+    args = kvmem_environment_args(lookup);
+    check(args.size() == 2 && args[0].value == "--n-cpu-moe" && args[1].value == "20");
+    environment["LLAMA_ARG_CPU_MOE"] = "true";
+    args = kvmem_environment_args(lookup);
+    check(args.size() == 3 && args[0].value == "--cpu-moe");
     std::puts("server options: passed");
 }

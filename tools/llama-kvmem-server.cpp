@@ -72,6 +72,8 @@ static void print_usage(const char * argv0) {
             "  -b, --batch-size N         logical batch (default 512)\n"
             "  -ngl, --n-gpu-layers N     GPU layers (default 99)\n"
             "  --gpu-layers N             alias of --n-gpu-layers; all supported, auto unsupported\n"
+            "  -cmoe, --cpu-moe           keep all routed expert weights on CPU\n"
+            "  -ncmoe, --n-cpu-moe N      keep routed experts of the first N layers on CPU\n"
             "  -t, --threads N            CPU generation threads; <=0 = hardware concurrency\n"
             "  -tb, --threads-batch N     CPU batch threads (defaults to --threads)\n"
             "  -ub, --ubatch-size N       physical batch size (defaults to --batch-size)\n"
@@ -1879,6 +1881,16 @@ int main(int argc, char ** argv) {
     mparams.n_gpu_layers = ngl;
     mparams.load_mtp = st.spec_mtp;
     mparams.load_mode = options.load_mode;
+    std::vector<llama_model_tensor_buft_override> expert_overrides;
+    if (options.cpu_moe) {
+        expert_overrides.push_back(llm_ffn_exps_cpu_override());
+    } else if (options.n_cpu_moe > 0) {
+        llm_add_n_cpu_ffn_overrides(options.n_cpu_moe, LLM_FFN_EXPS_REGEX, expert_overrides);
+    }
+    if (!expert_overrides.empty()) {
+        expert_overrides.push_back({nullptr, nullptr});
+        mparams.tensor_buft_overrides = expert_overrides.data();
+    }
     try {
         device_config.apply(options, mparams);
     } catch (const std::exception & e) {
@@ -1907,6 +1919,7 @@ int main(int argc, char ** argv) {
         {"gpu", {{"device_requested", options.device_names.empty() ? "auto" : options.device_names},
                   {"main_gpu", mparams.main_gpu}, {"split_mode", mparams.split_mode == LLAMA_SPLIT_MODE_NONE ? "none" : "layer"},
                   {"layers_requested", ngl}}},
+        {"moe", {{"cpu_all_requested", options.cpu_moe}, {"cpu_layers_requested", options.n_cpu_moe}}},
         {"context_requested", n_ctx}, {"batch_requested", st.n_batch},
         {"n_predict", st.n_predict_default},
         {"kv", {{"k", ggml_type_name(st.cache_type_k)}, {"v", ggml_type_name(st.cache_type_v)}}},

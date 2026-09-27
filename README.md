@@ -1,5 +1,7 @@
 # KVMem + llama.cpp
 
+Local extension: [Qwen3 MoE with CPU expert offload](docs/moe-cpu-offload.md).
+
 **Prebuilt downloads:** [Windows x64 CUDA 13 / 12 (rc3)](https://github.com/kvmem/kvmem-llama.cpp/releases/tag/v0.16.0-rc3) · [Linux / WSL2 x86_64 (rc1)](https://github.com/kvmem/kvmem-llama.cpp/releases/tag/v0.16.0-rc1)
 
 **QQ community / QQ 交流群：1040777853**

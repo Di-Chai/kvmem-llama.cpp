@@ -40,11 +40,13 @@ static MultimodalCheckpoint multimodal_checkpoint(ServerState & st, int row) {
         kvmem_scoped_ms mean_timer(st.mm_perf.mean_ms);
         llama_kvmem_get_tail_mean(row, data->tail_mean);
     }
-    const auto flags = LLAMA_STATE_SEQ_FLAGS_PARTIAL_ONLY;
-    const size_t size = llama_state_seq_get_size_ext(st.ctx, 0, flags);
-    data->recurrent.resize(size);
-    if (llama_state_seq_get_data_ext(st.ctx, data->recurrent.data(), size, 0, flags) != size) {
-        throw std::runtime_error("multimodal recurrent checkpoint failed");
+    if (llama_model_is_recurrent(st.model) || llama_model_is_hybrid(st.model)) {
+        const auto flags = LLAMA_STATE_SEQ_FLAGS_PARTIAL_ONLY;
+        const size_t size = llama_state_seq_get_size_ext(st.ctx, 0, flags);
+        data->recurrent.resize(size);
+        if (llama_state_seq_get_data_ext(st.ctx, data->recurrent.data(), size, 0, flags) != size) {
+            throw std::runtime_error("multimodal recurrent checkpoint failed");
+        }
     }
     {
         kvmem_scoped_ms carry_timer(st.mm_perf.carry_ms);
@@ -87,7 +89,8 @@ static void multimodal_restore(ServerState & st, const MultimodalCheckpoint & ch
     llama_kvmem_decode_mean_discard();
     const auto flags = LLAMA_STATE_SEQ_FLAGS_PARTIAL_ONLY;
     const auto & data = checkpoint.data->recurrent;
-    if (!live && llama_state_seq_set_data_ext(st.ctx, data.data(), data.size(), 0, flags) != data.size()) {
+    // Pure attention state restore would move KV cells outside the KVMem slot map.
+    if (!live && !data.empty() && llama_state_seq_set_data_ext(st.ctx, data.data(), data.size(), 0, flags) != data.size()) {
         throw std::runtime_error("multimodal recurrent restore failed");
     }
     if (!llama_kvmem_remove_logical(st.ctx, checkpoint.row, -1)) {

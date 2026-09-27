@@ -4,10 +4,18 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 LLAMA="${KVMEM_LLAMA_DIR:-$ROOT/llama.cpp}"
 PATCH="$ROOT/patches/llama-kvmem-current.patch"
+MOE_UPGRADE="$ROOT/patches/qwen3-moe-upgrade.patch"
 BUDGET_UPGRADE="$ROOT/patches/reasoning-budget-upgrade.patch"
 REPLAY_UPGRADE="$ROOT/patches/replayssm-upgrade.patch"
 UPGRADE="$ROOT/patches/multimodal-upgrade.patch"
 cd "$LLAMA"
+
+apply_upgrade() {
+    git apply "$1" || return 1
+    if git apply --check "$MOE_UPGRADE" 2>/dev/null; then
+        git apply "$MOE_UPGRADE" || return 1
+    fi
+}
 
 # An incremental patch may also fit an older, incomplete tree. Check that
 # its result contains the entire current patch before changing live files.
@@ -21,7 +29,7 @@ can_upgrade() {
             cp -p -- "$path" "$check_dir/$path"
         fi
     done < <(git apply --numstat "$PATCH")
-    if (cd "$check_dir" && git apply "$upgrade" && git apply --reverse --check "$PATCH") 2>/dev/null; then
+    if (cd "$check_dir" && apply_upgrade "$upgrade" && git apply --reverse --check "$PATCH") 2>/dev/null; then
         rc=0
     fi
     rm -rf -- "$check_dir"
@@ -33,14 +41,17 @@ if git apply --reverse --check "$PATCH" 2>/dev/null; then
 elif git apply --check "$PATCH" 2>/dev/null; then
     git apply "$PATCH"
     echo "applied current KVMem patch to pinned llama.cpp"
+elif can_upgrade "$MOE_UPGRADE"; then
+    apply_upgrade "$MOE_UPGRADE"
+    echo "upgraded existing KVMem tree with Qwen3 MoE capture"
 elif can_upgrade "$BUDGET_UPGRADE"; then
-    git apply "$BUDGET_UPGRADE"
+    apply_upgrade "$BUDGET_UPGRADE"
     echo "upgraded existing KVMem tree with reasoning budget fix"
 elif can_upgrade "$REPLAY_UPGRADE"; then
-    git apply "$REPLAY_UPGRADE"
+    apply_upgrade "$REPLAY_UPGRADE"
     echo "upgraded existing KVMem tree with ReplaySSM support"
 elif can_upgrade "$UPGRADE"; then
-    git apply "$UPGRADE"
+    apply_upgrade "$UPGRADE"
     echo "upgraded existing KVMem tree with multimodal and ReplaySSM support"
 else
     echo "llama.cpp differs from the supported pin or KVMem baseline; no files changed" >&2
