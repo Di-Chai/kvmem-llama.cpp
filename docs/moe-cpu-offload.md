@@ -1,5 +1,7 @@
 # Qwen3 MoE with CPU expert offload
 
+See [the design and measured results (中文)](moe-kv-design.md) and [benchmark artifacts](../benchmarks/moe-kv/README.md) for the joint KV/expert experiments.
+
 This extension adds Qwen3 MoE retrieval captures and exposes llama.cpp CPU expert placement in `llama-kvmem-server`. The target model family is `qwen3moe`, including Qwen3-30B-A3B-Instruct-2507 and Qwen3-Coder-30B-A3B-Instruct. Runtime validation is recorded separately; an architecture hook does not establish model quality.
 
 ## Placement

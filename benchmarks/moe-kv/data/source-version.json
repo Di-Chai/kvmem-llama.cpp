@@ -1,0 +1,8 @@
+{
+  "kvmem_base": "b36dc37392814f4c16b03668b95956c6c81d64d7",
+  "llama_pin": "b81c99b479d4c24e5eeca10de99032ebd343ef8f",
+  "cuda_compiler": "13.2.86",
+  "cuda_arch": "86",
+  "adaptation_patch_sha256": "9083b49bd35615fc4b3eb0aff21526fcacd463d477117b2e0a1b6c417ed2254d",
+  "pure_attention_checkpoint_fix": true
+}

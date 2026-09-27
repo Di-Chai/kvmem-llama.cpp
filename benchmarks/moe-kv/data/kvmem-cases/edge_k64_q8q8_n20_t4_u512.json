@@ -1,0 +1,45 @@
+{
+  "name": "edge_k64_q8q8_n20_t4_u512",
+  "config": {
+    "budget": 65536,
+    "kv": "q8q8",
+    "ncpu": 20,
+    "threads": 4,
+    "tb": 6,
+    "ub": 512,
+    "reserve": 4096
+  },
+  "prompt_tokens": 260992,
+  "prompt_sha256": "4515ef3274b39b3cb6a3b04920793eb1b59f7dea36e01d521327d3027ed68df9",
+  "outputs": [
+    512,
+    512,
+    512
+  ],
+  "decode_tps": [
+    14.064205066269936,
+    13.915838249375328,
+    14.148728981317907
+  ],
+  "decode_median": 14.064205066269936,
+  "cold_prefill_tps": 359.0777999447776,
+  "cold_ttft_s": 728.6798981339962,
+  "cached_ttft_s": [
+    3.3034557689970825,
+    3.4098043789999792
+  ],
+  "quality": {
+    "orchid": true,
+    "cobalt": true
+  },
+  "peaks": {
+    "rss": 22699470848,
+    "system_used": 23871234048,
+    "swap": 35475456,
+    "gpu_mib": 15793.0,
+    "gpu_temp": 82.0,
+    "gpu_watts": 213.49
+  },
+  "process_swap_peak": 0,
+  "source": "fresh process; full cold prefill and 2 cached repeats; 512 tokens each"
+}

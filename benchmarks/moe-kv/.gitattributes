@@ -1,0 +1,5 @@
+# Preserve manifest-covered bytes on Windows as well as Linux.
+data/** -text
+inputs/** -text
+historical/** -text
+data/*.csv whitespace=cr-at-eol

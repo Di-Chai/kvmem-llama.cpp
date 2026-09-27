@@ -1,0 +1,56 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "native_all_experts_cpu",
+      "repetition": 0,
+      "content_events": 512,
+      "client_tps": 4.34244712711001,
+      "server_tps": 4.342444566676847,
+      "difference_percent": 5.896294410501213e-05
+    },
+    {
+      "name": "native_all_experts_cpu",
+      "repetition": 1,
+      "content_events": 512,
+      "client_tps": 4.321912474957686,
+      "server_tps": 4.3219140554658555,
+      "difference_percent": -3.656963440956673e-05
+    },
+    {
+      "name": "native_all_experts_cpu",
+      "repetition": 2,
+      "content_events": 512,
+      "client_tps": 4.312380381598823,
+      "server_tps": 4.312385164284448,
+      "difference_percent": -0.00011090580834816066
+    },
+    {
+      "name": "kvmem_64k",
+      "repetition": 0,
+      "content_events": 512,
+      "client_tps": 14.111670650418471,
+      "server_tps": 14.099914250735337,
+      "difference_percent": 0.08337922822843069
+    },
+    {
+      "name": "kvmem_64k",
+      "repetition": 1,
+      "content_events": 512,
+      "client_tps": 14.23213792848253,
+      "server_tps": 14.229766046127168,
+      "difference_percent": 0.01666845644316961
+    },
+    {
+      "name": "kvmem_64k",
+      "repetition": 2,
+      "content_events": 512,
+      "client_tps": 12.540020945552826,
+      "server_tps": 12.53785126791302,
+      "difference_percent": 0.017305019763314
+    }
+  ],
+  "client_speedup": 3.2651449403904538,
+  "server_speedup": 3.2624235627507217,
+  "note": "Client rate uses 511 token intervals between first and last content events; UTF-8 buffering may coalesce events."
+}

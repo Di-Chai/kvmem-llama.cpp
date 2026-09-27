@@ -1,0 +1,77 @@
+[
+  {
+    "file": "results/k16_64k_control/recall.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k16_64k_control/rep0.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k16_64k_control/rep1.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k16_64k_control/rep2.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k16_64k/recall.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k16_64k/rep0.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k16_64k/rep1.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k16_64k/rep2.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k32_64k/recall.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k32_64k/rep0.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k32_64k/rep1.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/k32_64k/rep2.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/best_128k/recall.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/best_128k/rep0.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  },
+  {
+    "file": "results/best_128k/rep1.server.log",
+    "checks": 6,
+    "max_mismatched_bytes": 0
+  }
+]

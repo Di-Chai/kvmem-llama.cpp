@@ -1,0 +1,329 @@
+{
+  "export_date": "2026-09-27",
+  "measurement_origin": "Alienware MoE experiments starting 2026-09-23; no new GPU measurements during publication",
+  "scope": "Selected inputs, numerical summaries and historical runners; full raw logs, SSE events, samples and generated outputs are not included",
+  "files": [
+    {
+      "source": "moe/source-version.json",
+      "exported": "data/source-version.json",
+      "source_sha256": "13065b00d4869d04265ac8298228f84e4d60cb83e3e3ec7fc656c3dc21563394",
+      "exported_sha256": "13065b00d4869d04265ac8298228f84e4d60cb83e3e3ec7fc656c3dc21563394",
+      "normalization": null
+    },
+    {
+      "source": "moe/comparison.json",
+      "exported": "data/ablation.json",
+      "source_sha256": "baf939eaed22e341280e758942548e50103e57c6880a9987b9588f0ed2f0341a",
+      "exported_sha256": "baf939eaed22e341280e758942548e50103e57c6880a9987b9588f0ed2f0341a",
+      "normalization": null
+    },
+    {
+      "source": "moe/comparison.csv",
+      "exported": "data/ablation.csv",
+      "source_sha256": "36381c14b66cdef06ca58b9040f4f714be7782f825669fee82b3ad2807211e51",
+      "exported_sha256": "36381c14b66cdef06ca58b9040f4f714be7782f825669fee82b3ad2807211e51",
+      "normalization": null
+    },
+    {
+      "source": "moe/checkpoint-regression.json",
+      "exported": "data/checkpoint-regression.json",
+      "source_sha256": "dad85327e1db346c3d9c0cdbdcdc73608a4cd0b367475d1b2366314727b8feaf",
+      "exported_sha256": "dad85327e1db346c3d9c0cdbdcdc73608a4cd0b367475d1b2366314727b8feaf",
+      "normalization": null
+    },
+    {
+      "source": "moe-256k/comparison.json",
+      "exported": "data/full256-comparison.json",
+      "source_sha256": "60f82558859899164163cdf16077ee93e693207e52451b5c4399569e64bf1a5e",
+      "exported_sha256": "e79ddaf7ea348928b80c3035ca552afcad824fd53f50f28b4d46df791eb4b793",
+      "normalization": "command paths: /home/chaidi/ -> $HOME/"
+    },
+    {
+      "source": "moe-256k/validation.json",
+      "exported": "data/full256-validation.json",
+      "source_sha256": "ccf9f413aa072aac6494be6020b2a74cdd5b55a8f553121c6113829a2fceb696",
+      "exported_sha256": "ccf9f413aa072aac6494be6020b2a74cdd5b55a8f553121c6113829a2fceb696",
+      "normalization": null
+    },
+    {
+      "source": "native-tuning/ranking.csv",
+      "exported": "data/native-ranking.csv",
+      "source_sha256": "891985d468e4d44cf52ea5d992973ac02f8be5e795afd0b305dc481418f7b6a8",
+      "exported_sha256": "891985d468e4d44cf52ea5d992973ac02f8be5e795afd0b305dc481418f7b6a8",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/ranking.csv",
+      "exported": "data/kvmem-ranking.csv",
+      "source_sha256": "df60fcfbef61ea6cd4b9b0efa58a4951e6ecf3e58c3d6682027b90ea3cb8605b",
+      "exported_sha256": "df60fcfbef61ea6cd4b9b0efa58a4951e6ecf3e58c3d6682027b90ea3cb8605b",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/native-baseline.json",
+      "exported": "data/native-final.json",
+      "source_sha256": "7052969df413e7a40720142b46294e7bd49d6e67fe079908ff3d688decc7c608",
+      "exported_sha256": "7052969df413e7a40720142b46294e7bd49d6e67fe079908ff3d688decc7c608",
+      "normalization": null
+    },
+    {
+      "source": "moe/prompt_65536.json",
+      "exported": "inputs/prompt-64k.json",
+      "source_sha256": "61af394df40abe02367273bc3ddb3d18cda9157b3868dd4a9b5f59ca813a0a1c",
+      "exported_sha256": "61af394df40abe02367273bc3ddb3d18cda9157b3868dd4a9b5f59ca813a0a1c",
+      "normalization": null
+    },
+    {
+      "source": "moe/prompt_131072.json",
+      "exported": "inputs/prompt-128k.json",
+      "source_sha256": "c5730f81fa6e83da3d343fa40a21cae35ebed9a3afb456210043700929795c45",
+      "exported_sha256": "c5730f81fa6e83da3d343fa40a21cae35ebed9a3afb456210043700929795c45",
+      "normalization": null
+    },
+    {
+      "source": "moe-256k/prompt.json",
+      "exported": "inputs/prompt-256k.json",
+      "source_sha256": "0fe675ffe322cb801828cfd9812f6405fdd23d8c94eaf11eda6aaef17587c7e1",
+      "exported_sha256": "0fe675ffe322cb801828cfd9812f6405fdd23d8c94eaf11eda6aaef17587c7e1",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/batch_k16_q4q8_n12_t4_u256/summary.json",
+      "exported": "data/kvmem-cases/batch_k16_q4q8_n12_t4_u256.json",
+      "source_sha256": "39103c8747294cf14a5b0033a2d13f6f3524314ad1ebcd4dd67d5e6109d07410",
+      "exported_sha256": "39103c8747294cf14a5b0033a2d13f6f3524314ad1ebcd4dd67d5e6109d07410",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/case_k128_q4q8_n26_t6_u512/summary.json",
+      "exported": "data/kvmem-cases/case_k128_q4q8_n26_t6_u512.json",
+      "source_sha256": "8b83d4e57e630ae5d5d9f1503b26bc558ca79025c087fe4f60583318f8f067e4",
+      "exported_sha256": "8b83d4e57e630ae5d5d9f1503b26bc558ca79025c087fe4f60583318f8f067e4",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/case_k128_q8q8_n31_t6_u512/summary.json",
+      "exported": "data/kvmem-cases/case_k128_q8q8_n31_t6_u512.json",
+      "source_sha256": "097c9b0fd022ba927c127795a0394a136cc3404a42d5f49be16f2019c5790620",
+      "exported_sha256": "097c9b0fd022ba927c127795a0394a136cc3404a42d5f49be16f2019c5790620",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/case_k16_q4q4_n12_t6_u512/summary.json",
+      "exported": "data/kvmem-cases/case_k16_q4q4_n12_t6_u512.json",
+      "source_sha256": "c206f3880477efaddcf4a22921fc01a76dce565e7d3c941038fa04e6d5f443c4",
+      "exported_sha256": "c206f3880477efaddcf4a22921fc01a76dce565e7d3c941038fa04e6d5f443c4",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/case_k16_q4q8_n13_t6_u512/summary.json",
+      "exported": "data/kvmem-cases/case_k16_q4q8_n13_t6_u512.json",
+      "source_sha256": "3f401b90481314e937aa3b9b004e9171a9fb7d4c94772af1d6155768320f2e59",
+      "exported_sha256": "3f401b90481314e937aa3b9b004e9171a9fb7d4c94772af1d6155768320f2e59",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/case_k16_q8q8_n14_t6_u512/summary.json",
+      "exported": "data/kvmem-cases/case_k16_q8q8_n14_t6_u512.json",
+      "source_sha256": "507aae2313f4767d086f404ca9df8eff40336642756aaf1ec85df07b8777e1b0",
+      "exported_sha256": "507aae2313f4767d086f404ca9df8eff40336642756aaf1ec85df07b8777e1b0",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/case_k32_q4q8_n15_t6_u512/summary.json",
+      "exported": "data/kvmem-cases/case_k32_q4q8_n15_t6_u512.json",
+      "source_sha256": "528e522dd7f95d83259c44808c90cd6fb29e2d73c6e8d9a92e7d3dc52a076e7b",
+      "exported_sha256": "528e522dd7f95d83259c44808c90cd6fb29e2d73c6e8d9a92e7d3dc52a076e7b",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/case_k32_q8q8_n16_t6_u512/summary.json",
+      "exported": "data/kvmem-cases/case_k32_q8q8_n16_t6_u512.json",
+      "source_sha256": "28ff6c3565e6927a72a0adc62f6f61e9be2eb6df6e385c1c0bda86c760753439",
+      "exported_sha256": "28ff6c3565e6927a72a0adc62f6f61e9be2eb6df6e385c1c0bda86c760753439",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/case_k64_q4q8_n19_t6_u512/summary.json",
+      "exported": "data/kvmem-cases/case_k64_q4q8_n19_t6_u512.json",
+      "source_sha256": "8bb5f5211c4a704314c71f045df5cc434d1e191b759f2715db30ae72d33155e8",
+      "exported_sha256": "8bb5f5211c4a704314c71f045df5cc434d1e191b759f2715db30ae72d33155e8",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/case_k64_q8q8_n21_t6_u512/summary.json",
+      "exported": "data/kvmem-cases/case_k64_q8q8_n21_t6_u512.json",
+      "source_sha256": "89a90ef6dbd60edf79c11a361241f2c7fa20731e61bcacd236c7519b2d0de2a7",
+      "exported_sha256": "89a90ef6dbd60edf79c11a361241f2c7fa20731e61bcacd236c7519b2d0de2a7",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/edge_k16_q4q8_n11_t4_u256/summary.json",
+      "exported": "data/kvmem-cases/edge_k16_q4q8_n11_t4_u256.json",
+      "source_sha256": "c855557bd681623ba746427c9d251727c34caa004b7bc8b8198b095e28071cc9",
+      "exported_sha256": "c855557bd681623ba746427c9d251727c34caa004b7bc8b8198b095e28071cc9",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/edge_k64_q8q8_n20_t4_u512/summary.json",
+      "exported": "data/kvmem-cases/edge_k64_q8q8_n20_t4_u512.json",
+      "source_sha256": "b65aa4a4bf2d003a947f42aaa4ee0950b6894d1b461274caf40f40259238745e",
+      "exported_sha256": "b65aa4a4bf2d003a947f42aaa4ee0950b6894d1b461274caf40f40259238745e",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/final_edge_k16_q4q8_n11_t4_u256/summary.json",
+      "exported": "data/kvmem-cases/final_edge_k16_q4q8_n11_t4_u256.json",
+      "source_sha256": "44cdd8fb660488be98fee7be61bb05f7b76169fd7ade4aa749b47d5400e42e21",
+      "exported_sha256": "44cdd8fb660488be98fee7be61bb05f7b76169fd7ade4aa749b47d5400e42e21",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/final_quality_k64_q8q8_n21_t4_u512/summary.json",
+      "exported": "data/kvmem-cases/final_quality_k64_q8q8_n21_t4_u512.json",
+      "source_sha256": "7e1442922f5be397d86ec06aa640c068066ebcb6873ad4737add8a49508ee2f9",
+      "exported_sha256": "7e1442922f5be397d86ec06aa640c068066ebcb6873ad4737add8a49508ee2f9",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/final_speed_k16_q4q8_n12_t4_u256/summary.json",
+      "exported": "data/kvmem-cases/final_speed_k16_q4q8_n12_t4_u256.json",
+      "source_sha256": "fec62d02199e7f682ea53edaab6636310bae057756c70161880e21e1e9b65188",
+      "exported_sha256": "fec62d02199e7f682ea53edaab6636310bae057756c70161880e21e1e9b65188",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/quality_threads_k64_q8q8_n21_t10_u512/summary.json",
+      "exported": "data/kvmem-cases/quality_threads_k64_q8q8_n21_t10_u512.json",
+      "source_sha256": "211b594faca635ca1a771f9857f390da57eea712e0b09ce65ddd4da67531f75b",
+      "exported_sha256": "211b594faca635ca1a771f9857f390da57eea712e0b09ce65ddd4da67531f75b",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/quality_threads_k64_q8q8_n21_t4_u512/summary.json",
+      "exported": "data/kvmem-cases/quality_threads_k64_q8q8_n21_t4_u512.json",
+      "source_sha256": "453ff371c36a35fc4666d40feb1b26297cf621e22479ca51bcfcb7f6fba1f325",
+      "exported_sha256": "453ff371c36a35fc4666d40feb1b26297cf621e22479ca51bcfcb7f6fba1f325",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/threads_k16_q4q8_n13_t10_u512/summary.json",
+      "exported": "data/kvmem-cases/threads_k16_q4q8_n13_t10_u512.json",
+      "source_sha256": "562af1db1a0cc0fc9db091b9e5d44f9cceec55ce3ef2f164c27206a05083e60d",
+      "exported_sha256": "562af1db1a0cc0fc9db091b9e5d44f9cceec55ce3ef2f164c27206a05083e60d",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/threads_k16_q4q8_n13_t4_u512/summary.json",
+      "exported": "data/kvmem-cases/threads_k16_q4q8_n13_t4_u512.json",
+      "source_sha256": "d5a6817c3540172fda589a99bec4cdbd09194da116264691b2f5ec46336e2d81",
+      "exported_sha256": "d5a6817c3540172fda589a99bec4cdbd09194da116264691b2f5ec46336e2d81",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/results/threads_k16_q4q8_n13_t8_u512/summary.json",
+      "exported": "data/kvmem-cases/threads_k16_q4q8_n13_t8_u512.json",
+      "source_sha256": "e6e0fb70c481176f1cc45c5d07f0f4066dd3e5dec43f45c7cc4d1ba490ed1f8e",
+      "exported_sha256": "e6e0fb70c481176f1cc45c5d07f0f4066dd3e5dec43f45c7cc4d1ba490ed1f8e",
+      "normalization": null
+    },
+    {
+      "source": "moe/experiment.py",
+      "exported": "historical/moe/experiment.py",
+      "source_sha256": "511a392fdca57a79e895c1f16a28560e752f7a1bd2bde034c445959b2cfcb851",
+      "exported_sha256": "511a392fdca57a79e895c1f16a28560e752f7a1bd2bde034c445959b2cfcb851",
+      "normalization": null
+    },
+    {
+      "source": "moe/suite.py",
+      "exported": "historical/moe/suite.py",
+      "source_sha256": "260717e7b48005eeca66bbf4fb4ebbcd41771a50942760c400488b52b9fac6fd",
+      "exported_sha256": "260717e7b48005eeca66bbf4fb4ebbcd41771a50942760c400488b52b9fac6fd",
+      "normalization": null
+    },
+    {
+      "source": "moe/identity-logits.cpp",
+      "exported": "historical/moe/identity-logits.cpp",
+      "source_sha256": "68cb6718bd43a581ac1e5240973bd5af9f339add1a52fedf6ba1d7913e50378a",
+      "exported_sha256": "68cb6718bd43a581ac1e5240973bd5af9f339add1a52fedf6ba1d7913e50378a",
+      "normalization": null
+    },
+    {
+      "source": "moe-256k/bench256.py",
+      "exported": "historical/moe-256k/bench256.py",
+      "source_sha256": "e254ef183da3ca3c3b64439c45674471537772e27dddb01d40e10a7b855f6859",
+      "exported_sha256": "e254ef183da3ca3c3b64439c45674471537772e27dddb01d40e10a7b855f6859",
+      "normalization": null
+    },
+    {
+      "source": "moe-256k/validate_results.py",
+      "exported": "historical/moe-256k/validate_results.py",
+      "source_sha256": "b8efc90b635adcbfcb04d2174c2103da139967c224ab85eb4f1e7c17f7a01c83",
+      "exported_sha256": "b8efc90b635adcbfcb04d2174c2103da139967c224ab85eb4f1e7c17f7a01c83",
+      "normalization": null
+    },
+    {
+      "source": "moe-256k/previous-experiment.py",
+      "exported": "historical/moe-256k/previous-experiment.py",
+      "source_sha256": "511a392fdca57a79e895c1f16a28560e752f7a1bd2bde034c445959b2cfcb851",
+      "exported_sha256": "511a392fdca57a79e895c1f16a28560e752f7a1bd2bde034c445959b2cfcb851",
+      "normalization": null
+    },
+    {
+      "source": "native-tuning/tune.py",
+      "exported": "historical/native-tuning/tune.py",
+      "source_sha256": "69ff4de34fd4c293a4d240d6465663cf08aa4bb3f17af857cb81fbbd54199aea",
+      "exported_sha256": "69ff4de34fd4c293a4d240d6465663cf08aa4bb3f17af857cb81fbbd54199aea",
+      "normalization": null
+    },
+    {
+      "source": "native-tuning/analyze.py",
+      "exported": "historical/native-tuning/analyze.py",
+      "source_sha256": "5edc8e8abc3aa9ee297e7119b8818dc984fcb33bc07681525100be60b3e60ec4",
+      "exported_sha256": "5edc8e8abc3aa9ee297e7119b8818dc984fcb33bc07681525100be60b3e60ec4",
+      "normalization": null
+    },
+    {
+      "source": "native-tuning/finish_search.py",
+      "exported": "historical/native-tuning/finish_search.py",
+      "source_sha256": "67535834984bd711a8eca1dd9502f28baa77427560592442eba68c0fb4042206",
+      "exported_sha256": "67535834984bd711a8eca1dd9502f28baa77427560592442eba68c0fb4042206",
+      "normalization": null
+    },
+    {
+      "source": "native-tuning/search_more.py",
+      "exported": "historical/native-tuning/search_more.py",
+      "source_sha256": "2cd10fbf36fa367300407b3f5fc53a22590d4539770e3820f971be22bbcdef4c",
+      "exported_sha256": "2cd10fbf36fa367300407b3f5fc53a22590d4539770e3820f971be22bbcdef4c",
+      "normalization": null
+    },
+    {
+      "source": "native-tuning/after_phase1.py",
+      "exported": "historical/native-tuning/after_phase1.py",
+      "source_sha256": "0457ffaebc0ce14d58bf85975229306cc59038c34225979a5809d4d602d8481d",
+      "exported_sha256": "0457ffaebc0ce14d58bf85975229306cc59038c34225979a5809d4d602d8481d",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/tune.py",
+      "exported": "historical/kvmem-tuning/tune.py",
+      "source_sha256": "9829556780729411b437c3bbaae5f469e2b486cfd4fab4529dda3b4c2a4b6f4c",
+      "exported_sha256": "9829556780729411b437c3bbaae5f469e2b486cfd4fab4529dda3b4c2a4b6f4c",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/analyze.py",
+      "exported": "historical/kvmem-tuning/analyze.py",
+      "source_sha256": "107091d83b548ed6cfcbf2ced602a9d12808429e38547a99d4921393d17d071c",
+      "exported_sha256": "107091d83b548ed6cfcbf2ced602a9d12808429e38547a99d4921393d17d071c",
+      "normalization": null
+    },
+    {
+      "source": "kvmem-tuning/check_edge.py",
+      "exported": "historical/kvmem-tuning/check_edge.py",
+      "source_sha256": "555e454007e5a5c90135560c696bc9a94e0a53d5f771146b0bcf9151e6a76c5d",
+      "exported_sha256": "555e454007e5a5c90135560c696bc9a94e0a53d5f771146b0bcf9151e6a76c5d",
+      "normalization": null
+    }
+  ]
+}

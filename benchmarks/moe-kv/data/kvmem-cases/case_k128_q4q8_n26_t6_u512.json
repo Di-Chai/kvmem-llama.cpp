@@ -1,0 +1,45 @@
+{
+  "name": "case_k128_q4q8_n26_t6_u512",
+  "config": {
+    "budget": 131072,
+    "kv": "q4q8",
+    "ncpu": 26,
+    "threads": 6,
+    "tb": 6,
+    "ub": 512,
+    "reserve": 4096
+  },
+  "prompt_tokens": 260992,
+  "prompt_sha256": "4515ef3274b39b3cb6a3b04920793eb1b59f7dea36e01d521327d3027ed68df9",
+  "outputs": [
+    512,
+    512,
+    512
+  ],
+  "decode_tps": [
+    8.033858346654666,
+    7.952156105397087,
+    7.95835972237725
+  ],
+  "decode_median": 7.95835972237725,
+  "cold_prefill_tps": 242.78181528555535,
+  "cold_ttft_s": 1077.1490368929954,
+  "cached_ttft_s": [
+    4.7702222439984325,
+    4.931187380003394
+  ],
+  "quality": {
+    "orchid": true,
+    "cobalt": true
+  },
+  "peaks": {
+    "rss": 21701238784,
+    "system_used": 22887473152,
+    "swap": 35475456,
+    "gpu_mib": 15432.0,
+    "gpu_temp": 83.0,
+    "gpu_watts": 164.22
+  },
+  "process_swap_peak": 0,
+  "source": "fresh process; full cold prefill and 2 cached repeats; 512 tokens each"
+}

@@ -1,0 +1,42 @@
+{
+  "name": "final_q4q8_n40_t10_u512_tb6_op32_1",
+  "config": {
+    "kv": "q4q8",
+    "ncpu": 40,
+    "threads": 10,
+    "ub": 512,
+    "tb": 6,
+    "op_min": 32,
+    "op_offload": true
+  },
+  "source": "fresh cold prefill with this exact configuration, followed by 2 cached repeats",
+  "prompt_tokens": 260992,
+  "decode_tps": [
+    4.534988894779543,
+    4.536365190074767,
+    4.5290778720343
+  ],
+  "decode_median": 4.534988894779543,
+  "peaks": {
+    "rss": 15615930368,
+    "system_used": 16835698688,
+    "swap": 35475456,
+    "gpu_mib": 15266.0,
+    "gpu_temp": 84.0,
+    "gpu_watts": 225.34
+  },
+  "outputs": [
+    512,
+    512,
+    512
+  ],
+  "quality": {
+    "orchid": true,
+    "cobalt": true
+  },
+  "memory_checks": {
+    "process_swap_peak": 0,
+    "system_swap_in_delta": 73728,
+    "system_swap_out_delta": 0
+  }
+}
